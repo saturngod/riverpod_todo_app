@@ -1,7 +1,8 @@
 import 'package:go_router/go_router.dart';
-import 'package:riverpodtodo/list/presentation/list_screen.dart';
-import 'package:riverpodtodo/login/presentation/login_screen.dart';
-import 'package:riverpodtodo/splash/splash_screen.dart';
+import 'package:riverpodtodo/features/list/presentation/list_screen.dart';
+import 'package:riverpodtodo/features/login/presentation/login_screen.dart';
+import 'package:riverpodtodo/features/register/presentation/register_screen.dart';
+import 'package:riverpodtodo/features/splash/presentation/splash_screen.dart';
 
 class RouteNames {
   static const splash = "splash";
@@ -31,7 +32,7 @@ final appRouter = GoRouter(routes: [
   GoRoute(
     name: RouteNames.register,
     path: RoutePath.register,
-    builder: (context, state) => LoginScreen(),
+    builder: (context, state) => RegisterScreen(),
   ),
   GoRoute(
     name: RouteNames.list,

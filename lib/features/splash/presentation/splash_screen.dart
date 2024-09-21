@@ -2,8 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:riverpodtodo/router/router.dart';
-import 'package:riverpodtodo/splash/model/auth_model.dart';
-import 'package:riverpodtodo/splash/provider/auth_model_provider.dart';
+import 'package:riverpodtodo/features/splash/model/auth_model.dart';
 
 class SplashScreen extends ConsumerStatefulWidget {
   const SplashScreen({super.key});
@@ -20,8 +19,8 @@ class _SplashScreenState extends ConsumerState<SplashScreen> {
   }
 
   Future<void> _checkAuthStatus() async {
-    final authModel = await ref.read(authModelProvider.future);
-    final status = await authModel.checkAuthStatus();
+
+    final status = await ref.read(authModelProvider.notifier).checkAuthStatus();
 
     // Check if the widget is still mounted before using context
     if (!mounted) return;

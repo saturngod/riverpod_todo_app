@@ -1,10 +1,19 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:riverpodtodo/user/service/user_service.dart';
+import 'package:riverpod_annotation/riverpod_annotation.dart';
+import 'package:riverpodtodo/services/user/provider/user_service_provider.dart';
+import 'package:riverpodtodo/services/user/user_service.dart';
 
-class LoginViewModel extends StateNotifier<LoginState> {
-  final UserService _userService;
+part 'login_view_model.g.dart';
+
+@riverpod
+class LoginViewModel extends _$LoginViewModel {
+  late final UserService _userService;
   
-  LoginViewModel(this._userService) : super(LoginState.initial());
+  @override
+  LoginState build() {
+    _userService = ref.read(userServiceProvider);
+    return LoginState.initial();
+  }
 
   Future<void> login(String username, String password) async {
     state = LoginState.loading();

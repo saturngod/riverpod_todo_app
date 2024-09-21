@@ -1,16 +1,24 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:riverpod_annotation/riverpod_annotation.dart';
 import 'package:riverpodtodo/Utils/token_helper.dart';
-import 'package:riverpodtodo/user/provider/user_service_provider.dart';
+import 'package:riverpodtodo/services/user/provider/user_service_provider.dart';
+
+part 'auth_model.g.dart';
 
 enum AuthStatus {
   authenticated,
   unauthenticated,
 }
 
-class AuthModel {
-  final TokenHelper tokenHelper;
-  final AutoDisposeFutureProviderRef ref;
-  AuthModel(this.tokenHelper, this.ref);
+
+@riverpod
+class AuthModel extends _$AuthModel{
+  final TokenHelper tokenHelper = TokenHelper();
+  
+  @override
+  AuthStatus build()  {
+    return AuthStatus.unauthenticated;
+  }
 
   Future<AuthStatus> checkAuthStatus() async {
     final String? token = await tokenHelper.getAuthToken();
@@ -34,5 +42,9 @@ class AuthModel {
     else {
       return AuthStatus.unauthenticated;
     }
+  }
+
+  void logout(){
+    tokenHelper.clearToken();
   }
 }

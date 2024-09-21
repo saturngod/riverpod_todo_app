@@ -4,7 +4,8 @@ import 'package:crypto/crypto.dart';
 import 'package:dio/dio.dart';
 import 'package:riverpodtodo/Network/api_route.dart';
 import 'package:riverpodtodo/Network/api_service.dart';
-import 'package:riverpodtodo/user/model/token_resp.dart';
+import 'package:riverpodtodo/services/user/model/register_resp.dart';
+import 'package:riverpodtodo/services/user/model/token_resp.dart';
 
 class UserRepositoryException implements Exception {
   final String message;
@@ -45,6 +46,30 @@ class UserRepository {
           'hash' : "$digest"
         },
         fromJson: TokenResp.fromJson);
+    
+    return response;
+    } on DioException catch (e) {
+      throw UserRepositoryException('Network error: ${e.message}');
+    } catch (e) {
+      throw UserRepositoryException('An unexpected error occurred: $e');
+    }
+  }
+
+  Future<RegisterResp> register(String username, String password) async {
+    try {
+      final timestamp = DateTime.now().millisecondsSinceEpoch;
+      var bytes = utf8.encode('$username$password$timestamp');
+      var digest = sha256.convert(bytes);
+
+    final RegisterResp response = await _apiService.post<RegisterResp>(
+        ApiRoute.register,
+        data: {
+          'username': username,
+          'password': password,
+          'timestamp': timestamp,
+          'hash' : "$digest"
+        },
+        fromJson: RegisterResp.fromJson);
     
     return response;
     } on DioException catch (e) {

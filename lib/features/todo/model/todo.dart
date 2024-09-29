@@ -1,4 +1,4 @@
-import 'package:riverpodtodo/Network/base_response.dart';
+import 'package:riverpodtodo/network/base_response.dart';
 
 class Todo extends BaseResponse {
   final int id;

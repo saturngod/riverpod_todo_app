@@ -1,4 +1,4 @@
-import 'package:riverpodtodo/Utils/token_helper.dart';
+import 'package:riverpodtodo/utils/token_helper.dart';
 import 'package:riverpodtodo/features/splash/model/auth_model.dart';
 import 'package:riverpodtodo/services/user/user_service.dart';
 

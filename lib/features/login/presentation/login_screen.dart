@@ -112,6 +112,7 @@ class LoginScreen extends ConsumerWidget {
   }
 
   void _login(WidgetRef ref) {
+    //ref.watch(loginViewModelProvider)
     ref.read(loginViewModelProvider.notifier).login(
           usernameController.text,
           passwordController.text,

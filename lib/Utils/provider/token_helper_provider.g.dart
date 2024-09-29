@@ -1,25 +1,24 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'auth_model.dart';
+part of 'token_helper_provider.dart';
 
 // **************************************************************************
 // RiverpodGenerator
 // **************************************************************************
 
-String _$authModelHash() => r'dc9bfca17f37ccd03f6a4a840fa81711e7980594';
+String _$tokenHelperHash() => r'8a41cd8d352e76d9a75c992ad7a435001c6c785d';
 
-/// See also [AuthModel].
-@ProviderFor(AuthModel)
-final authModelProvider =
-    AutoDisposeNotifierProvider<AuthModel, AuthStatus>.internal(
-  AuthModel.new,
-  name: r'authModelProvider',
+/// See also [tokenHelper].
+@ProviderFor(tokenHelper)
+final tokenHelperProvider = AutoDisposeProvider<TokenHelper>.internal(
+  tokenHelper,
+  name: r'tokenHelperProvider',
   debugGetCreateSourceHash:
-      const bool.fromEnvironment('dart.vm.product') ? null : _$authModelHash,
+      const bool.fromEnvironment('dart.vm.product') ? null : _$tokenHelperHash,
   dependencies: null,
   allTransitiveDependencies: null,
 );
 
-typedef _$AuthModel = AutoDisposeNotifier<AuthStatus>;
+typedef TokenHelperRef = AutoDisposeProviderRef<TokenHelper>;
 // ignore_for_file: type=lint
 // ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member

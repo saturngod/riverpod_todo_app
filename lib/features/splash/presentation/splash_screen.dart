@@ -30,6 +30,7 @@ class _SplashScreenState extends ConsumerState<SplashScreen> {
     } else {
       context.goNamed(RouteNames.login); // Navigate to the login screen
     }
+    
   }
 
   @override

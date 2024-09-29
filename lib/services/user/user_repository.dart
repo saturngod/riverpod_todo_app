@@ -18,12 +18,13 @@ class UserRepository {
 
   Future<TokenResp> refreshToken(String refreshToken) async {
     try {
-    _apiService.setAuthToken(refreshToken);
-    final TokenResp response = await _apiService.post<TokenResp>(
-        ApiRoute.refreshToken,
-        fromJson: TokenResp.fromJson);
-    
-    return response;
+      _apiService.setAuthToken(refreshToken);
+      final TokenResp? response = await _apiService
+          .post<TokenResp>(ApiRoute.refreshToken, fromJson: TokenResp.fromJson);
+      if (response == null) {
+        throw UserRepositoryException('Failed to refresh token');
+      }
+      return response;
     } on DioException catch (e) {
       throw UserRepositoryException('Network error: ${e.message}');
     } catch (e) {
@@ -37,17 +38,19 @@ class UserRepository {
       var bytes = utf8.encode('$username$password$timestamp');
       var digest = sha256.convert(bytes);
 
-    final TokenResp response = await _apiService.post<TokenResp>(
-        ApiRoute.login,
-        data: {
-          'username': username,
-          'password': password,
-          'timestamp': timestamp,
-          'hash' : "$digest"
-        },
-        fromJson: TokenResp.fromJson);
-    
-    return response;
+      final TokenResp? response =
+          await _apiService.post<TokenResp>(ApiRoute.login,
+              data: {
+                'username': username,
+                'password': password,
+                'timestamp': timestamp,
+                'hash': "$digest"
+              },
+              fromJson: TokenResp.fromJson);
+      if (response == null) {
+        throw UserRepositoryException('Failed to refresh token');
+      }
+      return response;
     } on DioException catch (e) {
       throw UserRepositoryException('Network error: ${e.message}');
     } catch (e) {
@@ -61,17 +64,19 @@ class UserRepository {
       var bytes = utf8.encode('$username$password$timestamp');
       var digest = sha256.convert(bytes);
 
-    final RegisterResp response = await _apiService.post<RegisterResp>(
-        ApiRoute.register,
-        data: {
-          'username': username,
-          'password': password,
-          'timestamp': timestamp,
-          'hash' : "$digest"
-        },
-        fromJson: RegisterResp.fromJson);
-    
-    return response;
+      final RegisterResp? response =
+          await _apiService.post<RegisterResp>(ApiRoute.register,
+              data: {
+                'username': username,
+                'password': password,
+                'timestamp': timestamp,
+                'hash': "$digest"
+              },
+              fromJson: RegisterResp.fromJson);
+      if (response == null) {
+        throw UserRepositoryException('Failed to refresh token');
+      }
+      return response;
     } on DioException catch (e) {
       throw UserRepositoryException('Network error: ${e.message}');
     } catch (e) {

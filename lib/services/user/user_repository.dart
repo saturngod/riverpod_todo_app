@@ -2,8 +2,8 @@ import 'dart:convert';
 
 import 'package:crypto/crypto.dart';
 import 'package:dio/dio.dart';
-import 'package:riverpodtodo/network/api_route.dart';
-import 'package:riverpodtodo/network/api_service.dart';
+import 'package:riverpodtodo/core/network/api_route.dart';
+import 'package:riverpodtodo/core/network/api_service.dart';
 import 'package:riverpodtodo/services/user/model/register_resp.dart';
 import 'package:riverpodtodo/services/user/model/token_resp.dart';
 

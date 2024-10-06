@@ -1,4 +1,4 @@
-import 'package:riverpodtodo/network/base_response.dart';
+import 'package:riverpodtodo/core/network/base_response.dart';
 import 'package:riverpodtodo/features/todo/model/todo.dart';
 
 class TodoList extends BaseResponse{

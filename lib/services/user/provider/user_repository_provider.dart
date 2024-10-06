@@ -1,5 +1,5 @@
 import 'package:riverpod_annotation/riverpod_annotation.dart';
-import 'package:riverpodtodo/network/todo_api.dart';
+import 'package:riverpodtodo/core/network/todo_api.dart';
 import 'package:riverpodtodo/services/user/user_repository.dart';
 
 part 'user_repository_provider.g.dart';

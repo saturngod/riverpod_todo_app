@@ -1,7 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/foundation.dart';
-import 'package:riverpodtodo/network/base_request.dart';
-import 'package:riverpodtodo/network/base_response.dart';
+import 'package:riverpodtodo/core/network/base_request.dart';
+import 'package:riverpodtodo/core/network/base_response.dart';
 
 class ApiService {
   final String baseUrl;

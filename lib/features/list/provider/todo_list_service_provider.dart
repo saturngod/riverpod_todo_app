@@ -1,7 +1,7 @@
 import 'package:riverpod_annotation/riverpod_annotation.dart';
-import 'package:riverpodtodo/network/todo_api.dart';
-import 'package:riverpodtodo/utils/provider/token_helper_provider.dart';
-import 'package:riverpodtodo/utils/token_helper.dart';
+import 'package:riverpodtodo/core/network/todo_api.dart';
+import 'package:riverpodtodo/core/utils/provider/token_helper_provider.dart';
+import 'package:riverpodtodo/core/utils/token_helper.dart';
 import 'package:riverpodtodo/features/list/repository/todo_list_repository.dart';
 import 'package:riverpodtodo/features/list/service/todo_list_service.dart';
 

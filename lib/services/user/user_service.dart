@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:riverpodtodo/utils/token_helper.dart';
+import 'package:riverpodtodo/core/utils/storage_manager.dart';
+import 'package:riverpodtodo/core/utils/token_helper.dart';
 import 'package:riverpodtodo/services/user/user_repository.dart';
 
 class UserService {
@@ -10,7 +11,8 @@ class UserService {
   Future<bool> refreshToken(String refreshToken) async {
     try {
       final response = await _userRepository.refreshToken(refreshToken);
-      final tokenHelper = TokenHelper();
+      final tokenHelper = TokenHelper(storageManager: StorageManager.instance);
+
       if(response.success) {
         tokenHelper.setAuthToken(response.accessToken);
         tokenHelper.setRefreshToken(response.refreshToken);
@@ -31,7 +33,8 @@ class UserService {
   Future<bool> login(String username, String password) async {
     try {
       final response = await _userRepository.login(username, password);
-      final tokenHelper = TokenHelper();
+      final tokenHelper = TokenHelper(storageManager: StorageManager.instance);
+
       tokenHelper.setAuthToken(response.accessToken);
       tokenHelper.setRefreshToken(response.refreshToken);
       return true;

@@ -1,4 +1,4 @@
-import 'package:riverpodtodo/network/base_request.dart';
+import 'package:riverpodtodo/core/network/base_request.dart';
 
 class TodoUpdateRequest extends BaseRequest {
   

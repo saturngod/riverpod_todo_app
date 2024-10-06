@@ -1,6 +1,6 @@
 import 'package:riverpod_annotation/riverpod_annotation.dart';
-import 'package:riverpodtodo/network/api_route.dart';
-import 'package:riverpodtodo/network/api_service.dart';
+import 'package:riverpodtodo/core/network/api_route.dart';
+import 'package:riverpodtodo/core/network/api_service.dart';
 
 part 'todo_api.g.dart';
 

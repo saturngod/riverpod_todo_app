@@ -1,6 +1,6 @@
-import 'package:riverpodtodo/network/api_route.dart';
-import 'package:riverpodtodo/network/api_service.dart';
-import 'package:riverpodtodo/utils/token_helper.dart';
+import 'package:riverpodtodo/core/network/api_route.dart';
+import 'package:riverpodtodo/core/network/api_service.dart';
+import 'package:riverpodtodo/core/utils/token_helper.dart';
 import 'package:riverpodtodo/features/todo/model/todo.dart';
 import 'package:riverpodtodo/features/todo/model/todo_create_request.dart';
 import 'package:riverpodtodo/features/todo/model/todo_request.dart';

@@ -1,4 +1,4 @@
-import 'package:riverpodtodo/network/base_response.dart';
+import 'package:riverpodtodo/core/network/base_response.dart';
 
 class TokenResp extends BaseResponse {
   final String accessToken;

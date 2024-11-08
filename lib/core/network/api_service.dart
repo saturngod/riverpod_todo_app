@@ -55,7 +55,7 @@ class ApiService {
           queryParameters: queryParameters,
           options: Options(
             method: method,
-            headers: headers,
+            headers: data,
           ));
     } on DioException catch (e) {
       // Handle Dio-specific errors here (network issues, timeouts, etc.)

@@ -6,9 +6,7 @@ import 'package:riverpodtodo/features/list/model/todo_list_create_request.dart';
 
 class TodoListRepository {
   final ApiService _apiService;
-  TodoListRepository(TokenHelper tokenHelper,this._apiService, ) {
-    tokenHelper.getAuthToken().then((value) => _apiService.setAuthToken(value ?? ""));
-  }
+  TodoListRepository(TokenHelper tokenHelper,this._apiService, );
 
   Future<List<TodoList>> getTodoList() async {
     try {
@@ -49,7 +47,7 @@ class TodoListRepository {
 
   Future<void> deleteTodoList(String id) async {
     try {
-      await _apiService.delete(ApiRoute.todoWithId(id));
+      await _apiService.delete(ApiRoute.listWithId(id));
     } catch (e) {
       throw Exception('An unexpected error occurred: $e');
     }

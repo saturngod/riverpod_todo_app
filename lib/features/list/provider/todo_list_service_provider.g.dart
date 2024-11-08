@@ -7,7 +7,7 @@ part of 'todo_list_service_provider.dart';
 // **************************************************************************
 
 String _$todoListRepositoryHash() =>
-    r'32aea7b78e8412ea3a13c69bb402325f6c60444e';
+    r'e80231840d57453f15a6d541dbafebabcb65aff4';
 
 /// See also [todoListRepository].
 @ProviderFor(todoListRepository)
@@ -22,8 +22,10 @@ final todoListRepositoryProvider =
   allTransitiveDependencies: null,
 );
 
+@Deprecated('Will be removed in 3.0. Use Ref instead')
+// ignore: unused_element
 typedef TodoListRepositoryRef = AutoDisposeProviderRef<TodoListRepository>;
-String _$todoListServiceHash() => r'9bafc81adc1e0627938f3bac804b95c400d5a05d';
+String _$todoListServiceHash() => r'9c261ec98c76ec24cf1100770feafb3a6e569d8a';
 
 /// See also [todoListService].
 @ProviderFor(todoListService)
@@ -37,6 +39,8 @@ final todoListServiceProvider = AutoDisposeProvider<TodoListService>.internal(
   allTransitiveDependencies: null,
 );
 
+@Deprecated('Will be removed in 3.0. Use Ref instead')
+// ignore: unused_element
 typedef TodoListServiceRef = AutoDisposeProviderRef<TodoListService>;
 // ignore_for_file: type=lint
-// ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member
+// ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member, deprecated_member_use_from_same_package

@@ -7,9 +7,8 @@ import 'package:riverpodtodo/features/todo/model/todo_request.dart';
 
 class TodoRepository {
   final ApiService _apiService;
-  TodoRepository(TokenHelper tokenHelper,this._apiService, ) {
-    tokenHelper.getAuthToken().then((value) => _apiService.setAuthToken(value ?? ""));
-  }
+  TodoRepository(TokenHelper tokenHelper,this._apiService);
+
 
   Future<void> deleteTodo(String todoId) async {
     try {

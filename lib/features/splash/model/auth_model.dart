@@ -24,6 +24,10 @@ class AuthModel extends _$AuthModel{
     return _authService.checkAuthStatus();
   }
 
+  Future<String?> getAuthToken() async {
+    return _authService.getAuthToken();
+  }
+
   void logout(){
     _authService.logout();
   }

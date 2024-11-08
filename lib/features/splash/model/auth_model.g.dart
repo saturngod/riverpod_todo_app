@@ -6,7 +6,7 @@ part of 'auth_model.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$authModelHash() => r'dc9bfca17f37ccd03f6a4a840fa81711e7980594';
+String _$authModelHash() => r'ead4de191ef9007f1c9ffb1ecb27c0da158b0d23';
 
 /// See also [AuthModel].
 @ProviderFor(AuthModel)
@@ -22,4 +22,4 @@ final authModelProvider =
 
 typedef _$AuthModel = AutoDisposeNotifier<AuthStatus>;
 // ignore_for_file: type=lint
-// ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member
+// ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member, deprecated_member_use_from_same_package

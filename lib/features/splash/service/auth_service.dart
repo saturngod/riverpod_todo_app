@@ -7,6 +7,10 @@ class AuthService {
   final UserService _userService;
   AuthService(this._tokenHelper, this._userService);
 
+  Future<String?> getAuthToken() async {
+    return _tokenHelper.getAuthToken();
+  }
+
   Future<AuthStatus> checkAuthStatus() async {
     final String? token = await _tokenHelper.getAuthToken();
     if (token != null) {
